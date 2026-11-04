@@ -4,6 +4,9 @@ import Link from "next/link";
 import { useStore, todayISO } from "@/lib/store";
 import { CURRENCY } from "@/lib/config";
 
+
+// here is ue this 
+
 const money = (n) => `${CURRENCY} ${Number(n).toLocaleString("en-PK")}`;
 
 export default function Dashboard() {
@@ -14,6 +17,7 @@ export default function Dashboard() {
   const absent = Object.values(marks).filter((v) => v === "absent").length;
   const leave = Object.values(marks).filter((v) => v === "leave").length;
   const marked = present + absent + leave;
+  const a = 10
 
   const paid = data.fees.filter((f) => f.status === "paid").reduce((s, f) => s + f.amount, 0);
   const unpaid = data.fees.filter((f) => f.status !== "paid").reduce((s, f) => s + f.amount, 0);
